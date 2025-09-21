@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="280sp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/item_border_right"
+    android:padding="10sp">
+    <!-- Property Image -->
+    <ImageView
+        android:id="@+id/property_image_rating"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_image_bg"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/troll_livana"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/property_title_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Flamigo Đải lại, Vĩnh Phúc, Vĩnh Yên"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5sp"
+        app:layout_constraintStart_toEndOf="@id/property_image_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="5sp"
+
+        app:layout_constraintTop_toTopOf="@id/property_image_rating"
+        app:layout_constraintBottom_toBottomOf="@id/property_image_rating" />
+
+
+    <LinearLayout
+        android:id="@+id/rating_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/property_image_rating"
+        android:layout_marginTop="20sp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/average_rating_room"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="★ 4.34"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:id="@+id/number_review_room"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="5 lượt"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rating_room_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/rating_room"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đánh giá trung bình"
+            android:textColor="@color/textColorTertiary"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Số lượt đánh giá"
+            android:layout_weight="1"
+            android:textColor="@color/textColorTertiary"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/rating_five_room"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="93.2%"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="5sp"
+        app:layout_constraintTop_toBottomOf="@+id/rating_room_container"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tỷ lệ đánh giá 5 sao"
+        android:layout_weight="1"
+        android:textColor="@color/textColorTertiary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/rating_five_room"
+        tools:ignore="MissingConstraints" />"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

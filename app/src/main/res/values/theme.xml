@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyApplication.Splash" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background color. -->
+        <item name="windowSplashScreenBackground">@color/white</item>
+
+        <!-- Use your app logo as the splash image -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+
+        <!-- Set the theme of the Activity that follows the splash screen. -->
+        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
+    </style>
+</resources>

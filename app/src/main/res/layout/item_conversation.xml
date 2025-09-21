@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:foreground="?attr/selectableItemBackground"
+    android:paddingLeft="20dp"
+    android:paddingTop="24dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="26dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/conversationAvatar"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:src="@drawable/anh_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/conversationName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLines="1"
+        android:textColor="#121212"
+        android:textScaleX="1.05"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/messageTime"
+        app:layout_constraintStart_toEndOf="@+id/conversationAvatar"
+        app:layout_constraintTop_toTopOf="@+id/conversationAvatar"
+        tools:text="Sự nghiệp Bros" />
+
+    <TextView
+        android:id="@+id/lastMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-1dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLines="1"
+        android:textColor="#757575"
+        android:textScaleX="1.04"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/conversationName"
+        app:layout_constraintStart_toStartOf="@+id/conversationName"
+        app:layout_constraintTop_toBottomOf="@+id/conversationName"
+        tools:text="Bạn: 0-0 ft" />
+
+
+    <TextView
+        android:id="@+id/messageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/afacad_medium"
+        android:textColor="#9E9E9E"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lastMessage"
+        tools:text="48 phút" />
+
+    <View
+        android:id="@+id/onlineIndicator"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/online_indicator"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/conversationAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/conversationAvatar"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="-25dp"
+        android:background="#EDEDED"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="10dp">
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:weightSum="5"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button_explore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_explore"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/footer_icon_color"
+            android:padding="8dp"
+            android:text="Khám phá"
+            android:textAllCaps="false"
+            android:textColor="@color/footer_button_text_color"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_wishlists"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_favorite"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/footer_icon_color"
+            android:padding="8dp"
+            android:text="Yêu thích"
+            android:textAllCaps="false"
+            android:textColor="@color/footer_button_text_color"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_trips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_trip"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/footer_icon_color"
+            android:padding="8dp"
+            android:text="Chuyến đi"
+            android:textAllCaps="false"
+            android:textColor="@color/footer_button_text_color"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_messages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_message"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/footer_icon_color"
+            android:padding="8dp"
+            android:text="Tin nhắn"
+            android:textAllCaps="false"
+            android:textColor="@color/footer_button_text_color"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_person"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/footer_icon_color"
+            android:padding="8dp"
+            android:text="Hồ sơ"
+            android:textAllCaps="false"
+            android:textColor="@color/footer_button_text_color"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

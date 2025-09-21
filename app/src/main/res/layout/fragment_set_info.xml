@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.fragments.SetInfoFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingTop="20dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Thông tin cho thuê của bạn"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#242424"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Tên"
+                android:textColor="#353535"
+                android:textSize="22sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:textColorHint="#A9A9A9"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#1F1F1F"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tên nơi cho thuê"
+                    android:textColor="#353535"
+                    android:textColorHint="#43F0F0F0"
+                    android:textColorLink="#E94E82" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Địa chỉ"
+                android:textColor="#353535"
+                android:textSize="22sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ProvinceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Tỉnh / Thành phố"
+                android:textColorHint="@color/text_input_hint_color"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#282828"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/actProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/afacad_medium"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:popupBackground="#E6E6E6"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#1B1B1B"
+                    android:textColorLink="#E94E82"
+                    android:textSize="20sp"
+                    app:dropDownBackgroundTint="#D7D7D7" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/DistrictLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                android:enabled="false"
+                android:hint="Quận / Huyện"
+                android:textColorHint="@color/text_input_hint_color"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#282828"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/actDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:enabled="false"
+                    android:fontFamily="@font/afacad_medium"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:popupBackground="#E6E6E6"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#1B1B1B"
+                    android:textColorLink="#E94E82"
+                    android:textSize="20sp"
+                    app:dropDownBackgroundTint="#D7D7D7" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/WardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                android:enabled="false"
+                android:hint="Phường / Xã"
+                android:textColorHint="@color/text_input_hint_color"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#232323"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/actWard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/afacad_medium"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:popupBackground="#E6E6E6"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#1B1B1B"
+                    android:textColorLink="#E94E82"
+                    android:textSize="20sp"
+                    app:dropDownBackgroundTint="#D7D7D7" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Số nhà, tên đường"
+                android:textColorHint="@color/text_input_hint_color"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#282828"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/detailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/afacad_medium"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:popupBackground="#E6E6E6"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#1B1B1B"
+                    android:textColorLink="#E94E82"
+                    android:textSize="20sp"
+                    app:dropDownBackgroundTint="#D7D7D7" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Quy tắc"
+                android:textColor="#353535"
+                android:textSize="22sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:textColorHint="#A9A9A9"
+                app:boxStrokeColor="@color/text_input_layout"
+                app:cursorColor="#1F1F1F"
+                app:hintEnabled="false"
+                app:hintTextColor="#E94E82"
+                app:suffixTextColor="#E94E82">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/houseRule"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:fontFamily="@font/afacad"
+                    android:gravity="top|start"
+                    android:hint="Nhớ đóng cửa ..."
+                    android:inputType="textMultiLine"
+                    android:maxLength="1000"
+                    android:minLines="4"
+                    android:overScrollMode="always"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
+                    android:scrollbars="vertical"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

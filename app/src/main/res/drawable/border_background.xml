@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/>  <!-- Nền màu trắng -->
+    <corners android:radius="0dp"/>  <!-- Không bo góc -->
+    <stroke
+        android:width="0.6dp"
+        android:color="#8F898989"/>  <!-- Màu viền đỏ, width 2dp -->
+</shape>

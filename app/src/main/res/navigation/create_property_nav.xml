@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_property_nav"
+    app:startDestination="@id/setPropertyTypeFragment">
+
+    <fragment
+        android:id="@+id/setPropertyTypeFragment"
+        android:name="com.example.myapplication.ui.fragments.SetPropertyTypeFragment"
+        android:label="fragment_set_property_type"
+        tools:layout="@layout/fragment_set_property_type" >
+        <action
+            android:id="@+id/t01"
+            app:destination="@id/setInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/setInfoFragment"
+        android:name="com.example.myapplication.ui.fragments.SetInfoFragment"
+        android:label="fragment_set_info"
+        tools:layout="@layout/fragment_set_info" >
+        <action
+            android:id="@+id/t12"
+            app:destination="@id/setAmenitiesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/setAmenitiesFragment"
+        android:name="com.example.myapplication.ui.fragments.SetAmenitiesFragment"
+        android:label="fragment_set_amentities"
+        tools:layout="@layout/fragment_set_amentities" >
+        <action
+            android:id="@+id/t23"
+            app:destination="@id/setPicturesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/setPicturesFragment"
+        android:name="com.example.myapplication.ui.fragments.SetPicturesFragment"
+        android:label="fragment_set_pictures"
+        tools:layout="@layout/fragment_set_pictures" >
+        <action
+            android:id="@+id/t34"
+            app:destination="@id/setPricesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/setPricesFragment"
+        android:name="com.example.myapplication.ui.fragments.SetPricesFragment"
+        android:label="fragment_set_prices"
+        tools:layout="@layout/fragment_set_prices" />
+</navigation>

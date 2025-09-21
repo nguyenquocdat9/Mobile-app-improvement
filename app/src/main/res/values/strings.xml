@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Livana</string>
+    <string name="list_of_search_results">List of search results</string>
+    <string name="welcome_to_rent_house_app">Welcome to Rent House App</string>
+    <string name="search_for_houses">Search for houses</string>
+    <string name="recycler_view_content_description">List of available houses</string>
+    <string name="recycler_view_description">A list of posts to explore</string>
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <string name="explore">Explore</string>
+    <string name="wishlists">Wishlists</string>
+    <string name="trips">Trips</string>
+    <string name="messages">Messages</string>
+    <string name="profile">Profile</string>
+    <string name="change_profile_photo">Change profile photo</string>
+    <string name="back_button">Back</string>
+    <string name="booking_dates_format">Ngày: %1$s - %2$s</string>
+    <string name="total_price_format">Tổng cộng: %1$s</string>
+    <string name="booking_id_format">Mã đặt phòng: %1$s</string>
+    <string name="default_web_client_id">902300555019-naf008psucjtmguof65tmdjqulvfo5pt.apps.googleusercontent.com</string>
+</resources>

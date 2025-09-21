@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".ui.activities.SearchActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-35dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header with slogan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/backTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_arrow_back"
+                    android:drawablePadding="8dp"
+                    android:text="Quay về"
+                    android:textColor="#E91E63"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/afacad_medium"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+            <!-- Icons at the top -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/tabHomes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/iconHomes"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Homes"
+                        android:src="@drawable/ic_home" />
+
+                    <TextView
+                        android:id="@+id/textHomes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/afacad_medium"
+                        android:text="Nhà"
+                        android:textColor="#E91E63"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabServices"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/iconServices"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Services"
+                        android:src="@drawable/ic_services" />
+
+                    <TextView
+                        android:id="@+id/textServices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/afacad_medium"
+                        android:text="Dịch Vụ"
+                        android:textColor="#757575"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabExperiences"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/iconExperiences"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Experiences"
+                        android:src="@drawable/ic_experiences" />
+
+                    <TextView
+                        android:id="@+id/textExperiences"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/afacad_medium"
+                        android:text="Sắp Xếp"
+                        android:textColor="#757575"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Content Container -->
+            <FrameLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Homes Content (Your existing search UI) -->
+                <LinearLayout
+                    android:id="@+id/homesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!-- Name search card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/card_background_default"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:id="@+id/cardInnerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/afacad_medium"
+                                android:text="Tên?"
+                                android:textColor="@android:color/black"
+                                android:textSize="24sp"
+                                android:textStyle="normal" />
+
+                            <!-- Search input container - Initially GONE -->
+                            <LinearLayout
+                                android:id="@+id/layoutNameExpanded"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/inputLayout"
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Tìm kiếm theo tên"
+                                            app:boxBackgroundMode="outline"
+                                            app:boxStrokeColor="@android:color/transparent"
+                                            app:boxStrokeWidth="1dp"
+                                            app:boxStrokeWidthFocused="1dp"
+                                            app:startIconDrawable="@drawable/ic_search_black"
+                                            app:startIconTint="@color/black">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/editTextSearch"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="55dp"
+                                                android:backgroundTint="@android:color/transparent"
+                                                android:inputType="text"
+                                                android:textColor="@android:color/black"
+                                                android:textColorHint="#888888" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Where search card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWhere"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/card_background_default"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:id="@+id/cardWhereInnerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Địa chỉ?"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="24sp"
+                                    android:textStyle="normal" />
+                            </LinearLayout>
+
+                            <!-- Search input container - Initially GONE -->
+                            <LinearLayout
+                                android:id="@+id/layoutWhereExpanded"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/inputLayoutCity"
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Thành Phố"
+                                            app:boxBackgroundMode="outline"
+                                            app:boxStrokeColor="@android:color/transparent"
+                                            app:boxStrokeWidth="1dp"
+                                            app:boxStrokeWidthFocused="1dp"
+                                            app:startIconDrawable="@drawable/ic_location"
+                                            app:startIconTint="@color/black">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/editTextCity"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="55dp"
+                                                android:backgroundTint="@android:color/transparent"
+                                                android:inputType="text"
+                                                android:textColor="@android:color/black"
+                                                android:textColorHint="#888888" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/inputLayoutDistrict"
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Quận/Huyện"
+                                            app:boxBackgroundMode="outline"
+                                            app:boxStrokeColor="@android:color/transparent"
+                                            app:boxStrokeWidth="1dp"
+                                            app:boxStrokeWidthFocused="1dp"
+                                            app:startIconDrawable="@drawable/ic_map"
+                                            app:startIconTint="@color/black">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/editTextDistrict"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="55dp"
+                                                android:backgroundTint="@android:color/transparent"
+                                                android:inputType="text"
+                                                android:textColor="@android:color/black"
+                                                android:textColorHint="#888888" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- When search card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWhen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/card_background_default"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:id="@+id/cardWhenInnerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Thời gian?"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="24sp"
+                                    android:textStyle="normal" />
+                            </LinearLayout>
+
+                            <!-- Search input container - Initially GONE -->
+                            <LinearLayout
+                                android:id="@+id/layoutWhenExpanded"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/inputLayoutDepartureDate"
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Ngày đến"
+                                            app:boxBackgroundMode="outline"
+                                            app:boxStrokeColor="@android:color/transparent"
+                                            app:boxStrokeWidth="1dp"
+                                            app:boxStrokeWidthFocused="1dp"
+                                            app:startIconDrawable="@drawable/ic_calendar"
+                                            app:startIconTint="@color/black">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/editTextDepartureDate"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="55dp"
+                                                android:backgroundTint="@android:color/transparent"
+                                                android:focusable="false"
+                                                android:inputType="none"
+                                                android:textColor="@android:color/black"
+                                                android:textColorHint="#888888" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/inputLayoutArrivalDate"
+                                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Ngày rời đi"
+                                            app:boxBackgroundMode="outline"
+                                            app:boxStrokeColor="@android:color/transparent"
+                                            app:boxStrokeWidth="1dp"
+                                            app:boxStrokeWidthFocused="1dp"
+                                            app:startIconDrawable="@drawable/ic_calendar"
+                                            app:startIconTint="@color/black">
+
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:id="@+id/editTextArrivalDate"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="55dp"
+                                                android:backgroundTint="@android:color/transparent"
+                                                android:focusable="false"
+                                                android:inputType="none"
+                                                android:textColor="@android:color/black"
+                                                android:textColorHint="#888888" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <!-- Services Content (Fake content) -->
+                <LinearLayout
+                    android:id="@+id/servicesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <!-- Number of Guests -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="12dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Số lượng khách"
+                                android:fontFamily="@font/afacad_medium"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:textSize="18sp" />
+
+                                <SeekBar
+                                    android:id="@+id/seekBarGuests"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:layout_weight="1"
+                                    android:max="50"
+                                    android:progress="2" />
+
+                                <TextView
+                                    android:id="@+id/guest_number_max"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Number of Bedroom -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="12dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Số lượng phòng ngủ tối thiểu"
+                                android:fontFamily="@font/afacad_medium"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:textSize="18sp" />
+
+                                <SeekBar
+                                    android:id="@+id/seekBarBedroom"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:layout_weight="2"
+                                    android:max="20"
+                                    android:progress="2" />
+
+                                <TextView
+                                    android:id="@+id/bedroom_number_max"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Price -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="12dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <!-- Tiêu đề cho input -->
+                            <TextView
+                                android:id="@+id/priceTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Giá tối đa cho 1 đêm"
+                                android:textSize="18sp"
+                                android:textColor="#FF000000"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/afacad_medium"/>
+
+                            <!-- Thẻ nhập giá -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputPriceLayout"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Bạn muốn chi bao tiền cho 1 đêm ?"
+                                app:boxBackgroundMode="outline"
+                                app:boxStrokeColor="@android:color/transparent"
+                                app:boxStrokeWidth="1dp"
+                                app:boxStrokeWidthFocused="1dp"
+                                app:startIconTint="@color/black">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/editPriceSearch"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:inputType="text"
+                                    android:textColor="@android:color/black"
+                                    android:textColorHint="#888888" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                    <!-- Amenities -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Tiện ích"
+                                android:fontFamily="@font/afacad_medium"
+                                android:textSize="18sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox_wifi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="WiFi"
+                                android:fontFamily="@font/afacad_medium" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox_pool"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bể bơi"
+                                android:fontFamily="@font/afacad_medium" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox_bbq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BBQ"
+                                android:fontFamily="@font/afacad_medium" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox_pet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cho phép thú cưng"
+                                android:fontFamily="@font/afacad_medium" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/experiencesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <!-- Sort Options -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="12dp"
+                        android:layout_margin="5dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Sắp xếp theo"
+                                android:fontFamily="@font/afacad_medium"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <RadioGroup
+                                android:id="@+id/radioGroupSort"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio_price_asc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Giá: Thấp tới cao" />
+
+                                <RadioButton
+                                    android:id="@+id/radio_price_desc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Giá: Cao tới thấp" />
+
+                                <RadioButton
+                                    android:id="@+id/radio_rating_high"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Đánh giá: Cao nhất" />
+
+                                <RadioButton
+                                    android:id="@+id/radio_none"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/afacad_medium"
+                                    android:text="Không" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Bottom buttons -->
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textClearAll"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/afacad_medium"
+                    android:padding="16dp"
+                    android:text="Xóa hết"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#E91E63"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="24dp"
+                    android:paddingBottom="12dp"
+                    android:text="Tìm kiếm"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:icon="@drawable/ic_search_black"
+                    app:iconPadding="8dp"
+                    app:iconTint="@android:color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

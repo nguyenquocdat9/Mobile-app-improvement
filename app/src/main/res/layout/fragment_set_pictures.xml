@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragments.SetPicturesFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingTop="20dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Bức ảnh về nơi ở của bạn"
+                android:textColor="#262626"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Ảnh chính"
+                android:textColor="#353535"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/afacad_medium"
+                android:text="Tải lên một bức ảnh làm đại diện"
+                android:textColor="#262626"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/pickMainPhoto"
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="-10dp"
+                android:backgroundTint="#05FFFFFF"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_main_photo"
+                android:transformPivotX="170dp"
+                android:transformPivotY="80dp" />
+
+            <!-- ✅ Divider -->
+            <include
+                android:id="@+id/mainPhotoInclude"
+                layout="@layout/item_photo"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_margin="2dp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="16dp"
+                android:background="#CACACA" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Ảnh thêm"
+                android:textColor="#353535"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_medium"
+                android:text="Thêm nhưng bức ảnh khác về chỗ ở của bạn"
+                android:textColor="#262626"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_medium"
+                android:text="(tối đa 10 ảnh)"
+                android:textColor="#EA5D5D5D"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/pickSubPhoto"
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="-10dp"
+                android:backgroundTint="#10DEDEDE"
+                android:scaleType="centerCrop"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:src="@drawable/ic_sub_photo"
+                android:transformPivotX="170dp"
+                android:transformPivotY="80dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subPhotoRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:nestedScrollingEnabled="false" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

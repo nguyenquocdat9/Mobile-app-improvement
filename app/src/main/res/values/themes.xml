@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Màu nền Status Bar -->
+        <item name="android:statusBarColor">@color/white</item> <!-- Ví dụ: nền trắng -->
+
+        <!-- Đổi màu chữ/icons Status Bar thành đen (cho nền sáng) -->
+        <item name="android:windowLightStatusBar">true</item> <!-- Quan trọng -->
+
+        <!-- Các thuộc tính khác -->
+        <item name="colorPrimary">#E21C51</item>
+        <item name="colorPrimaryDark">#A21C39</item>
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+</resources>

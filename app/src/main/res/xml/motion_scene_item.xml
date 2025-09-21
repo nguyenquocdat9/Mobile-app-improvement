@@ -1,0 +1,38 @@
+<!-- res/xml/motion_scene_property_type_simple.xml -->
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/collapsed"
+        motion:constraintSetEnd="@id/expanded"
+        motion:duration="300">
+
+        <!-- Đảm bảo motionTarget trỏ đúng ID -->
+        <OnClick
+            motion:motionTarget="@+id/header"
+            motion:clickAction="toggle"/>
+    </Transition>
+
+    <!-- Thêm ID constraintSet -->
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="0dp"
+            android:layout_height="60dp"/> <!-- Chiều cao khi thu gọn -->
+
+        <Constraint
+            android:id="@+id/description"
+            android:visibility="gone"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/> <!-- Tự động co giãn -->
+
+        <Constraint
+            android:id="@+id/description"
+            android:visibility="visible"/>
+    </ConstraintSet>
+</MotionScene>

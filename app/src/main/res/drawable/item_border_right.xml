@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Nền gradient hồng -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#FF80A3"
+                android:endColor="#00FFFFFF"
+                android:angle="270"/>
+        </shape>
+    </item>
+
+    <!-- Đường kẻ đứt đoạn màu xám nhạt bên phải -->
+    <item android:right="2dp" android:left="0dp">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1dp"
+                android:color="@color/divider_gray"
+                android:dashWidth="4dp"
+                android:dashGap="2dp"/>
+        </shape>
+    </item>
+</layer-list>

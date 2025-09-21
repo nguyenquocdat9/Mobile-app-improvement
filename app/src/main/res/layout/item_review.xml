@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:layout_marginBottom="15dp"
+    android:layout_marginTop="5dp">
+
+    <!-- Avatar -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/avatar_placeholder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Tên + thời gian hoạt động -->
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Princess"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@id/img_avatar"
+        app:layout_constraintTop_toTopOf="@id/img_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/txt_active_years"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="10 tháng hoạt động trên Airbnb"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textColor="#888888"-->
+<!--        app:layout_constraintStart_toStartOf="@id/txt_username"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/txt_username" />-->
+
+    <!-- Rating + ngày đánh giá nằm cùng hàng -->
+    <LinearLayout
+        android:id="@+id/review_info_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/img_avatar"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Rating sao -->
+        <RatingBar
+            android:id="@+id/review_rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="5.0"
+            android:isIndicator="true"
+            android:stepSize="0.5"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="0dp"
+            style="@style/Widget.AppCompat.RatingBar.Small"/>
+
+
+        <!-- spacing nhỏ -->
+        <View
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <!-- Ngày đánh giá -->
+        <TextView
+            android:id="@+id/txt_review_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tháng 4 năm 2025"
+            android:textSize="12sp"
+            android:textColor="#444444" />
+    </LinearLayout>
+
+
+    <!-- Nội dung đánh giá -->
+    <TextView
+        android:id="@+id/txt_review_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Đây là nơi nghỉ dưỡng yên bình và rất đẹp..."
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/review_info_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
